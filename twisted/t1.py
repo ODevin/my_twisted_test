@@ -1,12 +1,17 @@
 from twisted.internet import reactor,endpoints
 from twisted.internet.protocol import Factory,Protocol
 from twisted.protocols.basic import LineReceiver
+nu=0
 class Echo(Protocol):
     dis={"a":"you choice a","b":"you choice b"}
 
     def connectionMade(self):
         self.transport.write(b"hi!")
-
+        global nu
+        nu +=1
+        # self.factory.numProtocols = self.factory.numProtocols + 1
+        print(nu)
+        self.transport.loseConnection()
     def dataReceived(self, data):
         res=data.decode().strip()
         print(res)
