@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/my_twisted_test.iml" filepath="$PROJECT_DIR$/.idea/my_twisted_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mytest_py/.idea/mytest_py.iml" filepath="$PROJECT_DIR$/../mytest_py/.idea/mytest_py.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../twisted-intro/.idea/twisted-intro.iml" filepath="$PROJECT_DIR$/../twisted-intro/.idea/twisted-intro.iml" />
+    </modules>
+  </component>
+</project>
