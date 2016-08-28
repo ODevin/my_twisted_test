@@ -1,67 +1,14 @@
-# def hello():
-#     print('Hello from the reactor loop!')
-#     print('Lately I feel like I\'m stuck in a rut.')
+import datetime, errno, optparse, select, socket
 
-# from twisted.internet import reactor
+def connect(address):
+    """Connect to the given server and return a non-blocking socket."""
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.connect(address)
+    sock.setblocking(0)
+    a=[sock]
+    poems = dict.fromkeys(a, '')
+    # return sock
+    print(poems)
 
-# reactor.callWhenRunning(hello)
+connect(("192.168.4.10",807))
 
-# print('Starting the reactor.')
-# reactor.run()
-
-# class base(object):
-#     __slots__=("y")
-#     def __init__(self):
-#         pass
-#
-# b = base()
-# b.y = ("1","2","3")
-# print(b.y)
-
-
-
-# class base(object):
-#     __slots__=('y',)
-#     y = 2
-#     v = 1
-#     def __init__(self):
-#           pass
-#
-# b = base()
-# print b.__dict__
-# b.x = 2
-# b.y = 3
-# print b.__dict__
-
-import optparse, os, socket, time
-
-
-def parse_args():
-    usage = 'hahhahahahhahahahahhahahahhahahh'
-
-    parser = optparse.OptionParser(usage)
-
-    help = "The port to listen on. Default to a random available port."
-    parser.add_option('--port', type='int', help=help)
-
-    help = "The interface to listen on. Default is localhost."
-    parser.add_option('--iface', help=help, default='localhost')
-
-    help = "The number of seconds between sending bytes."
-    parser.add_option('--delay', type='float', help=help, default=.7)
-
-    help = "The number of bytes to send at a time."
-    parser.add_option('--num-bytes', type='int', help=help, default=10)
-
-    options, args = parser.parse_args()
-
-    if len(args) != 1:
-        parser.error('Provide exactly one poetry file.')
-
-    poetry_file = args[0]
-
-    print(poetry_file)
-    print(options)
-    # return options, poetry_file
-
-parse_args()
