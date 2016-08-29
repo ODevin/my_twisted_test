@@ -10,5 +10,12 @@ def connect(address):
     # return sock
     print(poems)
 
-connect(("192.168.4.10",807))
+# connect(("192.168.4.10",807))
+class a():
+    def __init__(self):
+        self.aa="abc"
 
+p=a()
+print(p.aa)
+p.cc="123"
+print(p.cc)
